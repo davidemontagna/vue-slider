@@ -36,11 +36,29 @@ let app = new Vue({
         activeOn: 0
     },
     methods: {
-        imgActive: function(indexImg){
+
+        //funzione per mostrare solo l'immagine grande selezionata
+        bigImgActive: function(indexImg){
             if(indexImg == this.activeOn){
                 return "active";
             }
             return "image";
+        },
+        
+        //funzione per attivare la freccia verso su
+        arrowUp: function(){
+            this.activeOn --;
+            if(activeOn < 0){
+                this.activeOn = images.length-1;
+            }
+        },
+
+        //funzione per attivare la freccia verso giù
+        arrowDown: function(){
+            this.activeOn++;
+            if(activeOn == images.length){
+                this.activeOn = 0;
+            }
         }
     }
 })

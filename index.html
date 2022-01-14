@@ -14,18 +14,33 @@
         <div id="app">
             <div class="container dm-slide">
                 <div class="row">
-                    <div v-for="(element, index) in images" :class="imgActive(index)" class="col-9 p-0 dm-pos" id="big-image">
+                    <div v-for="(element, index) in images" :class="bigImgActive(index)" class="col-9 p-0 dm-pos" id="big-image">
                         <img :src="element">
+                        <div class="dm-txt">
+                            <h3 v-for="(showTitle, index) in title" :class="bigImgActive(index)">
+                                {{showTitle}}
+                            </h3>
+                            <span v-for="(showText, index) in text" :class="bigImgActive(index)">
+                                {{showText}}
+                            </span>
+                        </div>
                     </div>
                     <div class="col-2 p-0 dm-pos" >
-                        <div class="dm-arrow-up">
+                        <!--Freccia Su-->
+                        <div v-if="!(activeOn == 0)" @click="arrowUp" class="dm-arrow-up">
                             <i class="fa-solid fa-circle-arrow-up"></i>
                         </div>
-                        <div class="dm-arrow-down">
+
+                        <!--Freccia Giù-->
+                        <div v-if="!(activeOn == (images.length - 1))" @click="arrowDown" class="dm-arrow-down">
                             <i class="fa-solid fa-circle-arrow-down "></i>
                         </div>
+
+                        <!--Sezione immagini piccole-->
                         <div id="small-images">
-    
+                            <div class="dm-sm-opacity-off" v-for="(element) in images">
+                                <img v-bind:src="element">
+                            </div>
                         </div>
                     </div>
                 </div>
