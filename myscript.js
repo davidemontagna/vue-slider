@@ -49,8 +49,8 @@ let app = new Vue({
         arrowUp: function(){
             this.activeOn --;
             if(activeOn < 0){
-                this.activeOn = images.length-1;
-            }
+                this.activeOn = images.length-1;                
+            }            
         },
 
         //funzione per attivare la freccia verso giù
@@ -59,9 +59,27 @@ let app = new Vue({
             if(activeOn == images.length){
                 this.activeOn = 0;
             }
+        },
+
+        opacityOn: function(smImgAct){
+            if(smImgAct == this.activeOn){
+                return "dm-sm-opacity-on";
+            }
+            return "";
         }
     }
 })
+
+
+
+
+
+
+
+
+
+
+
 
 /*const items = [
     'img/01.jpg',

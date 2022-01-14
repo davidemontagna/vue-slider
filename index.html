@@ -14,6 +14,8 @@
         <div id="app">
             <div class="container dm-slide">
                 <div class="row">
+
+                    <!--Inserisco immagine grande con relativo titolo e testo-->
                     <div v-for="(element, index) in images" :class="bigImgActive(index)" class="col-9 p-0 dm-pos" id="big-image">
                         <img :src="element">
                         <div class="dm-txt">
@@ -27,18 +29,18 @@
                     </div>
                     <div class="col-2 p-0 dm-pos" >
                         <!--Freccia Su-->
-                        <div v-if="!(activeOn == 0)" @click="arrowUp" class="dm-arrow-up">
+                        <div v-show="!(activeOn == 0)" @click="arrowUp" class="dm-arrow-up">
                             <i class="fa-solid fa-circle-arrow-up"></i>
                         </div>
 
                         <!--Freccia Giù-->
-                        <div v-if="!(activeOn == (images.length - 1))" @click="arrowDown" class="dm-arrow-down">
+                        <div v-show="!(activeOn == (images.length - 1))" @click="arrowDown" class="dm-arrow-down">
                             <i class="fa-solid fa-circle-arrow-down "></i>
                         </div>
 
                         <!--Sezione immagini piccole-->
-                        <div id="small-images">
-                            <div class="dm-sm-opacity-off" v-for="(element) in images">
+                        <div  id="small-images">
+                            <div class="dm-sm-opacity-off" v-for="(element, index) in images" :class="opacityOn(index)">
                                 <img v-bind:src="element">
                             </div>
                         </div>
