@@ -55,14 +55,15 @@ let app = new Vue({
         arrowUp: function(){
             this.activeOn --;
             if(activeOn < 0){
-                this.activeOn = images.length-1;                
-            }            
+                this.activeOn = elements.length-1;                
+            } 
+            console.log(this.activeOn);          
         },
 
         //funzione per attivare la freccia verso giù
         arrowDown: function(){
             this.activeOn++;
-            if(activeOn == images.length){
+            if(activeOn == elements.length){
                 this.activeOn = 0;
             }
         },
