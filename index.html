@@ -16,14 +16,14 @@
                 <div class="row">
 
                     <!--Inserisco immagine grande con relativo titolo e testo-->
-                    <div v-for="(element, index) in images" :class="bigImgActive(index)" class="col-9 p-0 dm-pos" id="big-image">
-                        <img :src="element">
+                    <div v-for="(element, index) in elements" :class="bigImgActive(index)" class="col-9 p-0 dm-pos" id="big-image">
+                        <img :src="element.image">
                         <div class="dm-txt">
-                            <h3 v-for="(showTitle, index) in title" :class="bigImgActive(index)">
-                                {{showTitle}}
+                            <h3 v-for="(showTitle, index) in elements" :class="bigImgActive(index)">
+                                {{showTitle.title}}
                             </h3>
-                            <span v-for="(showText, index) in text" :class="bigImgActive(index)">
-                                {{showText}}
+                            <span v-for="(showText, index) in elements" :class="bigImgActive(index)">
+                                {{showText.text}}
                             </span>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
 
                         <!--Sezione immagini piccole-->
                         <div  id="small-images">
-                            <div class="dm-sm-opacity-off" v-for="(element, index) in images" :class="opacityOn(index)" @click="activeOn = index">
-                                <img v-bind:src="element">
+                            <div class="dm-sm-opacity-off" v-for="(element, index) in elements" :class="opacityOn(index)" @click="activeOn = index">
+                                <img v-bind:src="element.image">
                             </div>
                         </div>
                     </div>
