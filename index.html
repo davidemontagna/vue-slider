@@ -11,28 +11,31 @@
 </head>
 <body>
     <main>
-        <div class="container dm-slide">
-            <div class="row">
-                <div class="col-9 p-0 dm-pos" id="big-image">
-
+        <div id="app">
+            <div class="container dm-slide">
+                <div class="row">
+                    <div v-for="(element, index) in images" :class="imgActive(index)" class="col-9 p-0 dm-pos" id="big-image">
+                        <img :src="element">
+                    </div>
+                    <div class="col-2 p-0 dm-pos" >
+                        <div class="dm-arrow-up">
+                            <i class="fa-solid fa-circle-arrow-up"></i>
+                        </div>
+                        <div class="dm-arrow-down">
+                            <i class="fa-solid fa-circle-arrow-down "></i>
+                        </div>
+                        <div id="small-images">
+    
+                        </div>
+                    </div>
                 </div>
-                <div class="col-2 p-0 dm-pos" >
-                    <div class="dm-arrow-up">
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                    <div class="dm-arrow-down">
-                        <i class="fa-solid fa-circle-arrow-down "></i>
-                    </div>
-                    <div id="small-images">
-
-                    </div>
-                </div>
+                
             </div>
-            
         </div>
+        
     </main>
         
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="myscript.js"></script>
 </body>
 </html>
