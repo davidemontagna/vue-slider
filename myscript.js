@@ -48,14 +48,15 @@ let app = new Vue({
             if(indexImg == this.activeOn){
                 return "active";
             }
-            return "image";
+            return "not-active";
         },
         
         //funzione per attivare la freccia verso su
         arrowUp: function(){
-            this.activeOn --;
-            if(activeOn < 0){
-                this.activeOn = elements.length-1;                
+            this.activeOn--;
+            if(this.activeOn < 0){
+                this.activeOn = this.elements.length-1;
+                console.log(this.activeOn);                
             } 
             console.log(this.activeOn);          
         },
@@ -63,7 +64,7 @@ let app = new Vue({
         //funzione per attivare la freccia verso giù
         arrowDown: function(){
             this.activeOn++;
-            if(activeOn == elements.length){
+            if(this.activeOn == this.elements.length){
                 this.activeOn = 0;
             }
         },
