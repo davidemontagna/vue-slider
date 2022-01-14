@@ -61,6 +61,7 @@ let app = new Vue({
             }
         },
 
+        //funzione per il cambio opacità all'immagine piccola selezionata
         opacityOn: function(smImgAct){
             if(smImgAct == this.activeOn){
                 return "dm-sm-opacity-on";

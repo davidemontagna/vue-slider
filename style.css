@@ -58,7 +58,8 @@ img{
     transform: translate(-50%, -5%);
     cursor: pointer;
     z-index: 5;
-    opacity: 0.8;    
+    opacity: 0.8;  
+      
 }
 
 .dm-arrow-up{

@@ -29,18 +29,18 @@
                     </div>
                     <div class="col-2 p-0 dm-pos" >
                         <!--Freccia Su-->
-                        <div v-show="!(activeOn == 0)" @click="arrowUp" class="dm-arrow-up">
+                        <div  @click="arrowUp" class="dm-arrow-up">
                             <i class="fa-solid fa-circle-arrow-up"></i>
                         </div>
 
                         <!--Freccia Giù-->
-                        <div v-show="!(activeOn == (images.length - 1))" @click="arrowDown" class="dm-arrow-down">
+                        <div @click="arrowDown" class="dm-arrow-down">
                             <i class="fa-solid fa-circle-arrow-down "></i>
                         </div>
 
                         <!--Sezione immagini piccole-->
                         <div  id="small-images">
-                            <div class="dm-sm-opacity-off" v-for="(element, index) in images" :class="opacityOn(index)">
+                            <div class="dm-sm-opacity-off" v-for="(element, index) in images" :class="opacityOn(index)" @click="activeOn = index">
                                 <img v-bind:src="element">
                             </div>
                         </div>
